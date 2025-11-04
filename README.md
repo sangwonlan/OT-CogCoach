@@ -8,15 +8,16 @@
 > 연구·교육용 프로토타입입니다. 의료적 진단/치료 결정을 단독으로 대체하지 않습니다.
 
 ## 설치
-```bash
-python -m venv .venv
-# Windows
-.\.venv\Scripts\activate
-# Linux/macOS
-source .venv/bin/activate
+### DeepStream 8.0 (Jetson Orin / Ubuntu 24.04, Python 3.12)
+- NVIDIA DeepStream SDK 8.0 설치 (SDK Manager 또는 tar/DEB)
+- Python 바인딩(pyds) 및 gst-python 1.24.1 환경
+- **주의: NumPy 2.x 미지원 → 1.26.x 사용**
+  ```bash
+  sudo apt install python3-venv
+  python3 -m venv pyds --system-site-packages
+  source ./pyds/bin/activate
+  pip3 install --force-reinstall "numpy==1.26.0"
 
-python -m pip install --upgrade pip
-pip install -r requirements.txt
 
 ##시작 만 탐색하게 하는거
 ##python main.py --task visual
